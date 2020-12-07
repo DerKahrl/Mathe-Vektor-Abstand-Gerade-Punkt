@@ -1,0 +1,176 @@
+<html>
+	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			*{
+                border: 0;
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+            }
+
+            body {
+                background-color:#999999;
+            }
+
+            #page {
+                max-width: 1000px;
+                margin: 0 auto 0 auto;
+            }
+
+            h1 {
+                text-align: center;
+                font-size: xx-large;
+                width:102%;
+                background-color: #3385ff;
+                position:relative;
+                left: -10px;
+                top: -10px;
+            }
+
+            .Box {
+                background-color: white;
+                display: inline-block;
+                padding: 10px;
+                margin: 10px 0 10px 0;
+                -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3); 
+                box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.3);
+                width: 100%;
+            }
+
+            input {
+                border: 1px solid black;
+                text-align: center;
+            }
+
+            .VectorInputBox {
+                display:inline-block;
+                vertical-align: middle;
+            }
+
+            .VectorOutputBox {
+                display:inline-block;
+                vertical-align: middle;
+            }
+
+            .VectorName {
+                display:inline-block;
+                vertical-align: middle;
+
+                position: relative; 
+            }
+
+            .VectorName span {
+                position: absolute;
+                right:22px;
+                top: -15px;
+                width: 0px;
+            }
+
+            #ButtonRechnen {
+                all: revert;
+            }
+
+            .SeperatorLine {
+                width:100%;
+                border: 1px solid black;
+                vertical-align: middle;
+            }
+            .Fraction {
+                display:inline-block;
+                vertical-align: middle;
+            }
+            .FractionTop , .FractionBottom {
+                vertical-align: middle;
+                
+            }
+
+            .PaddingTop5 {
+                padding-top: 5px;
+            }
+
+        </style>
+        
+        <script src="math.js"></script>
+        <script src="math_vector.js"></script>
+        <script src="math_util.js"></script>
+        <script src="math_text_helper.js"></script>
+	
+    </head>
+    
+    <body onload="onBodyLoad()">
+        
+		<div id='page'>
+            <div id='InputBox' class='Box'>
+                <h1>Vektor</h1><br>
+
+                <div id='InfoText'>
+                    Gerade g: 
+                    <div class='VectorName'>
+                        x <span>→</span>
+                    </div>
+                    =
+                    <div class='VectorName'>
+                        0V<span>→</span>
+                    </div>
+                    *
+                    s
+                    +
+                    <div class='VectorName'>
+                        RV<span>→</span>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class='VectorName'>
+                    Orts<b>v</b>ektor: 0V<span>→</span>
+                </div>
+                =
+                <div class='VectorInputBox' id='OrtsVektor'>
+                    (<input type="text" id="x1" value="-3.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x2" value="4.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x3" value="-1.0" size="8" maxlength="8">)<br>
+                </div>
+                <br>
+                <br>
+                <div class='VectorName'>
+                    <b>R</b>ichtungs<b>v</b>ektor: RV<span>→</span>
+                </div>
+                =
+                <div class='VectorInputBox' id='RichtungsVektor'>
+                    (<input type="text" id="x1" value="-1.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x2" value="2.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x3" value="1.0" size="8" maxlength="8">)<br>
+                </div>
+
+                <br>
+                <br>
+                <div class='VectorName'>
+                    Punkt P: 0P<span>→</span>
+                </div>
+                =
+                <div class='VectorInputBox' id='PunktP'>
+                    (<input type="text" id="x1" value="3.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x2" value="2.0" size="8" maxlength="8">)<br>
+                    (<input type="text" id="x3" value="1.0" size="8" maxlength="8">)<br>
+                </div>
+
+                <br>
+                <br>
+                <input type="button" id="ButtonRechnen" value="Rechnen Varante 1" onclick="Rechnen_Variante1()">
+                <br>
+                <input type="button" id="ButtonRechnen" value="Rechnen Varante 2" onclick="Rechnen_Variante2()">
+            </div>
+
+            <div id='ResultBox' class='Box'>
+
+            </div>
+
+            
+		</div>
+		
+    </body>
+    
+</html>
